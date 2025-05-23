@@ -1,0 +1,212 @@
+[
+  {
+    "date": "2025-12-01",
+    "name": "Lily's Eatery",
+    "amount": 89.32,
+    "account": "Credit Account",
+    "payment_method": "Jane B. ••1234"
+  },
+  {
+    "date": "2025-12-01",
+    "name": "Office Stop Co.",
+    "amount": -287.89,
+    "account": "Ops / Payroll",
+    "payment_method": "Transfer"
+  },
+  {
+    "date": "2025-12-01",
+    "name": "Trader John's",
+    "amount": 53.49,
+    "account": "Credit Account",
+    "payment_method": "Landon S. ••0331"
+  },
+  {
+    "date": "2025-12-01",
+    "name": "Deli 77",
+    "amount": 6.91,
+    "account": "Credit Account",
+    "payment_method": "Jane B. ••5555"
+  },
+  {
+    "date": "2025-12-01",
+    "name": "Milgram Brokerage",
+    "amount": 2760.75,
+    "account": "Ops / Payroll",
+    "payment_method": "Jane B. ••2345"
+  },
+  {
+    "date": "2025-12-02",
+    "name": "Monarch Books",
+    "amount": 49.36,
+    "account": "Ops / Payroll",
+    "payment_method": "Aluna T. ••7840"
+  },
+  {
+    "date": "2025-12-02",
+    "name": "Lily's Eatery",
+    "amount": -25.89,
+    "account": "Credit Account",
+    "payment_method": "Jane B. ••5555"
+  },
+  {
+    "date": "2025-12-02",
+    "name": "Office Stop Co.",
+    "amount": 563.94,
+    "account": "Credit Account",
+    "payment_method": "Jane B. ••0330"
+  },
+  {
+    "date": "2025-12-02",
+    "name": "The Plant Organic Cafe",
+    "amount": -14.21,
+    "account": "Ops / Payroll",
+    "payment_method": "Parker L. ••4928"
+  },
+  {
+    "date": "2025-12-02",
+    "name": "Trader John's",
+    "amount": -11.82,
+    "account": "Ops / Payroll",
+    "payment_method": "Jane B. ••3745"
+  },
+  {
+    "date": "2025-12-03",
+    "name": "Deli 77",
+    "amount": 23.28,
+    "account": "Ops / Payroll",
+    "payment_method": "Landon S. ••4990"
+  },
+  {
+    "date": "2025-12-03",
+    "name": "Office Stop Co.",
+    "amount": -662.70,
+    "account": "Credit Account",
+    "payment_method": "Jane B. ••0330"
+  },
+  {
+    "date": "2025-12-03",
+    "name": "Shenzhen Supplies",
+    "amount": 189.14,
+    "account": "Ops / Payroll",
+    "payment_method": "Jessica A. ••9950"
+  },
+  {
+    "date": "2025-12-03",
+    "name": "Bruges Bistro",
+    "amount": -89.50,
+    "account": "AR",
+    "payment_method": "Transfer"
+  },
+  {
+    "date": "2025-12-03",
+    "name": "Antwerp Artisans",
+    "amount": 540.67,
+    "account": "Ops / Payroll",
+    "payment_method": "Transfer"
+  },
+  {
+    "date": "2025-12-04",
+    "name": "Lily's Eatery",
+    "amount": 0.93,
+    "account": "Ops / Payroll",
+    "payment_method": "Jane B. ••1234"
+  },
+  {
+    "date": "2025-12-04",
+    "name": "Deli 77",
+    "amount": -54.23,
+    "account": "Credit Account",
+    "payment_method": "Landon S. ••5555"
+  },
+  {
+    "date": "2025-12-04",
+    "name": "Office Stop Co.",
+    "amount": 287.89,
+    "account": "Ops / Payroll",
+    "payment_method": "Transfer"
+  },
+  {
+    "date": "2025-12-04",
+    "name": "Tokyo Traders",
+    "amount": -98.34,
+    "account": "AR",
+    "payment_method": "Jessica A. ••8492"
+  },
+  {
+    "date": "2025-12-04",
+    "name": "Milan Market",
+    "amount": 442.16,
+    "account": "Credit Account",
+    "payment_method": "Transfer"
+  },
+  {
+    "date": "2025-12-05",
+    "name": "Seoul Stationery",
+    "amount": -65.42,
+    "account": "Ops / Payroll",
+    "payment_method": "Parker L. ••1384"
+  },
+  {
+    "date": "2025-12-05",
+    "name": "Monarch Books",
+    "amount": -48.94,
+    "account": "Credit Account",
+    "payment_method": "Transfer"
+  },
+  {
+    "date": "2025-12-05",
+    "name": "Milgram Brokerage",
+    "amount": 987.65,
+    "account": "Ops / Payroll",
+    "payment_method": "Jane B. ••2345"
+  },
+  {
+    "date": "2025-12-05",
+    "name": "Zurich Zest",
+    "amount": 73.20,
+    "account": "AR",
+    "payment_method": "Transfer"
+  },
+  {
+    "date": "2025-12-05",
+    "name": "Gothenburg Goods",
+    "amount": -123.45,
+    "account": "Credit Account",
+    "payment_method": "Jessica A. ••7199"
+  },
+  {
+    "date": "2025-12-06",
+    "name": "To Ops / Payroll",
+    "amount": -54810.16,
+    "account": "AR",
+    "payment_method": "Transfer"
+  },
+  {
+    "date": "2025-12-06",
+    "name": "From AR",
+    "amount": 54810.16,
+    "account": "Ops / Payroll",
+    "payment_method": "Transfer"
+  },
+  {
+    "date": "2025-12-06",
+    "name": "Krakow Kitchen",
+    "amount": 342.27,
+    "account": "Credit Account",
+    "payment_method": "Aluna T. ••4112"
+  },
+  {
+    "date": "2025-12-06",
+    "name": "Oslo Outfitters",
+    "amount": -234.50,
+    "account": "Ops / Payroll",
+    "payment_method": "Jessica A. ••8394"
+  },
+  {
+    "date": "2025-12-06",
+    "name": "Split Spices",
+    "amount": 129.09,
+    "account": "Credit Account",
+    "payment_method": "Transfer"
+  }
+]
