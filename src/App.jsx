@@ -25,6 +25,7 @@ const Card = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border: 1px solid black;
   border-radius: 4px;
+  overflow-y: scroll;
 `;
 
 const Header = styled.div`
