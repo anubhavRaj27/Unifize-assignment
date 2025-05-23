@@ -1,14 +1,13 @@
 import styled from 'styled-components'
 import Table from './Table';
+import Header from './Header';
 
 function App() {
 
   return (
     <OuterContainer>
       <Card>
-        <Header>
-          Transactions
-        </Header>
+        <Header />
         <Table />
       </Card>
     </OuterContainer>
@@ -16,23 +15,17 @@ function App() {
 }
 
 const OuterContainer = styled.div`
-  padding: 1rem;
+  padding: 1rem 2rem;
+  background-color: #FFFDF6;
 `;
 
 const Card = styled.div`
+background-color: white;
   width: 100%;
   height: 95.5vh;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border: 1px solid black;
-  border-radius: 4px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
   overflow-y: scroll;
-`;
-
-const Header = styled.div`
-  text-align: left;
-  display: flex;
-  font-size: 24px;
-  padding: 16px 24px;
 `;
 
 export default App
