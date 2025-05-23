@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 import json from "./data/data.json";
 
@@ -25,12 +24,24 @@ const Table = () => {
   return (
     <TableWrapper>
       <HeadRow>
-        <HeadCell>Date</HeadCell>
-        <HeadCell>To/From</HeadCell>
-        <HeadCell>Amount</HeadCell>
-        <HeadCell>Account</HeadCell>
-        <HeadCell>Payment Method</HeadCell>
-        <HeadCell>Attachment</HeadCell>
+        <HeadCell>
+          <TextSpan>Date</TextSpan>
+        </HeadCell>
+        <HeadCell>
+          <TextSpan>To/From</TextSpan>
+        </HeadCell>
+        <HeadCell>
+          <TextSpan>Amount</TextSpan>
+        </HeadCell>
+        <HeadCell>
+          <TextSpan>Account</TextSpan>
+        </HeadCell>
+        <HeadCell>
+          <TextSpan>Payment Method</TextSpan>
+        </HeadCell>
+        <AttachmentHeadCell>
+          <TextSpan>Attachment</TextSpan>
+        </AttachmentHeadCell>
       </HeadRow>
 
       {json.map((txn, i) => {
@@ -41,16 +52,16 @@ const Table = () => {
         return (
           <BodyRow key={i} $isNewDate={isNewDate} $isLastOfDate={isLastOfDate}>
             <DateCell $isNewDate={isNewDate}>{formatDate(txn.date)}</DateCell>
-            <BodyCell>{txn.name}</BodyCell>
-            <BodyCell>
+            <CellBase>{txn.name}</CellBase>
+            <AmountCell $positive={txn.amount > 0}>
               {txn.amount.toLocaleString("en-US", {
                 style: "currency",
                 currency: "USD",
               })}
-            </BodyCell>
-            <BodyCell>{txn.account}</BodyCell>
-            <BodyCell>{txn.payment_method}</BodyCell>
-            <AttachmentCell>＋</AttachmentCell>
+            </AmountCell>
+            <CellBase>{txn.account}</CellBase>
+            <CellBase>{txn.payment_method}</CellBase>
+            <AttachmentCell><AddContainer>＋</AddContainer></AttachmentCell>
           </BodyRow>
         );
       })}
@@ -63,21 +74,20 @@ const grid = `
   2fr        
   1.5fr   
   1.5fr    
-  2fr        
-  0.5fr        
+  1.5fr        
+  100px        
 `;
 
 const TableWrapper = styled.div`
-  width: 100%;
   border-collapse: collapse;
+  padding: 0px 24px 12px 24px;
 `;
 
 const Row = styled.div`
   display: grid;
   grid-template-columns: ${grid};
   gap: 0.25rem;
-  padding: 8px 16px;
-  padding-left: 24px;
+  padding: 8px 4px;
   text-align: left;
 `;
 
@@ -88,7 +98,6 @@ const HeadRow = styled(Row)`
 `;
 
 const HeadCell = styled.div`
-  padding: 0.5rem 4px;
   font-weight: 600;
   font-size: 12px;
   font-weight: 400;
@@ -97,6 +106,7 @@ const HeadCell = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: 4px;
 `;
 
 const CellBase = styled.div`
@@ -107,36 +117,56 @@ const CellBase = styled.div`
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
+  color: #363644;
 `;
 
 const DateCell = styled(CellBase)`
-  color: #71717a;
   opacity: ${({ $isNewDate }) => ($isNewDate ? 1 : 0)};
   transition: opacity 0.1s;
   border-bottom: none;
 `;
 
-const BodyCell = styled(CellBase)`
-  color: #70707d;
+const AttachmentCell = styled(CellBase)`
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-const AttachmentCell = styled(BodyCell)`
+const AmountCell = styled(CellBase)`
+  color: ${({ $positive }) => ($positive ? "#188554" : "#363644")};
+`;
+
+const AttachmentHeadCell = styled(HeadCell)`
   text-align: center;
+`;
+
+const TextSpan = styled.span`
+  padding: 4px 8px 4px 0px;
+  cursor: pointer;
+  width: fit-content;
+  &:hover {
+    border-radius: 4px;
+    background-color: #7073930f;
+  }
 `;
 
 const BodyRow = styled.div`
   display: grid;
   grid-template-columns: ${grid};
-  padding: 8px 24px 0px;
+  padding: 8px 4px;
+  border-radius: 4px;
   gap: 0.25rem;
+  height: 49px;
   border-top: ${({ $isNewDate }) =>
     $isNewDate ? "1px solid #e5e7eb" : "none"};
 
   &::after {
     content: "";
+    bottom: 0;
     grid-column: 2 / -1;
     align-self: end;
-    border-bottom: 1px solid #e5e7eb;
     border-bottom: ${({ $isLastOfDate }) =>
       $isLastOfDate ? "none" : "1px solid #e5e7eb"};
   }
@@ -145,9 +175,23 @@ const BodyRow = styled.div`
     border-bottom: none;
   }
 
+  &:hover {
+    background-color: #7073930f;
+  }
+
   &:hover ${DateCell} {
     opacity: 1;
   }
+`;
+
+const AddContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #7073931a;
+  width: 32px;
+  height: 100%;
 `;
 
 export default Table;
