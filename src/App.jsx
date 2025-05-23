@@ -1,31 +1,38 @@
-import styled from 'styled-components'
-import Table from './Table';
-import Header from './Header';
+import styled from "styled-components";
+import Table from "./Table";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 function App() {
-
   return (
     <OuterContainer>
-      <Card>
-        <Header />
-        <Table />
-      </Card>
+      <Sidebar />
+      <PageContainer>
+        <MaxContainer>
+          <Header />
+          <Table />
+        </MaxContainer>
+      </PageContainer>
     </OuterContainer>
-  )
+  );
 }
 
 const OuterContainer = styled.div`
-  padding: 1rem 2rem;
-  background-color: #FFFDF6;
+  display: flex;
 `;
 
-const Card = styled.div`
-background-color: white;
+const PageContainer = styled.div`
+  display: flex;
+  justify-content: center;
   width: 100%;
-  height: 95.5vh;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
+  height: 100vh;
   overflow-y: scroll;
 `;
 
-export default App
+const MaxContainer = styled.div`
+  width: 70vw;
+  overflow-y: scroll;
+  height: 100%;
+`;
+
+export default App;
