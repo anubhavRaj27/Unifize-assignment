@@ -52,16 +52,26 @@ const Table = () => {
         return (
           <BodyRow key={i} $isNewDate={isNewDate} $isLastOfDate={isLastOfDate}>
             <DateCell $isNewDate={isNewDate}>{formatDate(txn.date)}</DateCell>
-            <CellBase>{txn.name}</CellBase>
+            <CellBase>
+              <Ellipses>{txn.name}</Ellipses>
+            </CellBase>
             <AmountCell $positive={txn.amount > 0}>
-              {txn.amount.toLocaleString("en-US", {
-                style: "currency",
-                currency: "USD",
-              })}
+              <Ellipses>
+                {txn.amount.toLocaleString("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                })}
+              </Ellipses>
             </AmountCell>
-            <CellBase>{txn.account}</CellBase>
-            <CellBase>{txn.payment_method}</CellBase>
-            <AttachmentCell><AddContainer>＋</AddContainer></AttachmentCell>
+            <CellBase>
+              <Ellipses>{txn.account}</Ellipses>
+            </CellBase>
+            <CellBase>
+              <Ellipses>{txn.payment_method}</Ellipses>
+            </CellBase>
+            <AttachmentCell>
+              <AddContainer>＋</AddContainer>
+            </AttachmentCell>
           </BodyRow>
         );
       })}
@@ -118,6 +128,9 @@ const CellBase = styled.div`
   font-weight: 400;
   line-height: 20px;
   color: #363644;
+  display: flex;
+  align-items: center;
+  height: 100%;
 `;
 
 const DateCell = styled(CellBase)`
@@ -140,6 +153,13 @@ const AmountCell = styled(CellBase)`
 
 const AttachmentHeadCell = styled(HeadCell)`
   text-align: center;
+`;
+
+const Ellipses = styled.div`
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const TextSpan = styled.span`
@@ -168,7 +188,8 @@ const BodyRow = styled.div`
     grid-column: 2 / -1;
     align-self: end;
     border-bottom: ${({ $isLastOfDate }) =>
-      $isLastOfDate ? "none" : "1px solid #e5e7eb"};
+    $isLastOfDate ? "none" : "1px solid #e5e7eb"};
+    margin-bottom: -8px; 
   }
 
   &:last-child::after {
@@ -191,7 +212,7 @@ const AddContainer = styled.div`
   border-radius: 50%;
   background-color: #7073931a;
   width: 32px;
-  height: 100%;
+  height: 32px;
 `;
 
 export default Table;
