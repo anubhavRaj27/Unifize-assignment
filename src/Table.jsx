@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import json from "./data/data.json";
+import { IoChevronDown } from "react-icons/io5";
 
 const Table = () => {
   const formatDate = (iso) => {
@@ -25,7 +26,9 @@ const Table = () => {
     <TableWrapper>
       <HeadRow>
         <HeadCell>
-          <TextSpan>Date</TextSpan>
+          <HeadSpan>
+            Date <IoChevronDown size={14} />
+          </HeadSpan>
         </HeadCell>
         <HeadCell>
           <TextSpan>To/From</TextSpan>
@@ -113,10 +116,12 @@ const HeadCell = styled.div`
   font-weight: 400;
   line-height: 20px;
   color: #70707d;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
   padding: 4px;
+  display: flex;
+  align-items: center;
 `;
 
 const CellBase = styled.div`
@@ -163,6 +168,10 @@ const Ellipses = styled.div`
 `;
 
 const TextSpan = styled.span`
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 4px 8px 4px 0px;
   cursor: pointer;
   width: fit-content;
@@ -170,6 +179,12 @@ const TextSpan = styled.span`
     border-radius: 4px;
     background-color: #7073930f;
   }
+`;
+
+const HeadSpan = styled(TextSpan)`
+  display: flex;
+  align-items: center;
+  gap: 4px;
 `;
 
 const BodyRow = styled.div`
@@ -188,8 +203,8 @@ const BodyRow = styled.div`
     grid-column: 2 / -1;
     align-self: end;
     border-bottom: ${({ $isLastOfDate }) =>
-    $isLastOfDate ? "none" : "1px solid #e5e7eb"};
-    margin-bottom: -8px; 
+      $isLastOfDate ? "none" : "1px solid #e5e7eb"};
+    margin-bottom: -8px;
   }
 
   &:last-child::after {
