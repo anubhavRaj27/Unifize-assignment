@@ -3,6 +3,7 @@ import json from "../data/data.json";
 import { IoChevronDown } from "react-icons/io5";
 import Avatar from "./Avatar";
 import { formatDate } from "../helpers/common";
+import { TiDocumentText } from "react-icons/ti";
 
 const Table = () => {
 
@@ -58,7 +59,7 @@ const Table = () => {
               <Ellipses>{txn.payment_method}</Ellipses>
             </CellBase>
             <AttachmentCell>
-              <AddContainer>＋</AddContainer>
+             {txn.attachment ? <TiDocumentText size={22} />:<AddContainer>＋</AddContainer>}
             </AttachmentCell>
           </BodyRow>
         );
