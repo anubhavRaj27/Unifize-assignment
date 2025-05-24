@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import Table from "./Table";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
+import Table from "./components/Table";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import TopActions from "./components/TopActions";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Sidebar />
       <PageContainer>
         <MaxContainer>
+          <TopActions />
           <Header />
           <Table />
         </MaxContainer>

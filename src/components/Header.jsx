@@ -81,10 +81,7 @@ const ClickableCircle = styled.div`
   background-color: #7073930f;
   padding: 8px;
   font-size: 14px;
-`;
-
-const ImageDiv = styled.img`
-  width: ${({$width})=>`${$width}px`};
+  cursor: pointer;
 `;
 
 const FilterApplied = styled.div`

@@ -10,10 +10,11 @@ import {
   HiOutlineChevronRight,
   HiOutlineDocumentDuplicate,
 } from "react-icons/hi2";
+import { FaTasks } from "react-icons/fa";
 
 const sidebarItems = [
   { label: "Home", icon: HiOutlineHome },
-  { label: "Tasks", icon: HiOutlineHome, badge: 5 },
+  { label: "Tasks", icon: FaTasks, badge: 5 },
   { label: "Transactions", icon: HiOutlineInboxStack, active: true },
   { label: "Payments", icon: HiOutlineCurrencyDollar, collapsible: true },
   { label: "Cards", icon: HiOutlineCreditCard },

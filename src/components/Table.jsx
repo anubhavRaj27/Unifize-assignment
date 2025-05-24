@@ -1,26 +1,10 @@
 import styled from "styled-components";
-import json from "./data/data.json";
+import json from "../data/data.json";
 import { IoChevronDown } from "react-icons/io5";
+import Avatar from "./Avatar";
+import { formatDate } from "../helpers/common";
 
 const Table = () => {
-  const formatDate = (iso) => {
-    const [yyyy, mm, dd] = iso.split("-");
-    const months = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-    return `${months[Number(mm) - 1]} ${Number(dd)}`;
-  };
 
   return (
     <TableWrapper>
@@ -55,9 +39,10 @@ const Table = () => {
         return (
           <BodyRow key={i} $isNewDate={isNewDate} $isLastOfDate={isLastOfDate}>
             <DateCell $isNewDate={isNewDate}>{formatDate(txn.date)}</DateCell>
-            <CellBase>
+            <NameCell>
+              <Avatar name={txn.name} />
               <Ellipses>{txn.name}</Ellipses>
-            </CellBase>
+            </NameCell>
             <AmountCell $positive={txn.amount > 0}>
               <Ellipses>
                 {txn.amount.toLocaleString("en-US", {
@@ -136,6 +121,10 @@ const CellBase = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
+`;
+
+const NameCell = styled(CellBase)`
+  gap: 8px;
 `;
 
 const DateCell = styled(CellBase)`
