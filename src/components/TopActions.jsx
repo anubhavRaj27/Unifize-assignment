@@ -5,7 +5,6 @@ import {
   HiOutlineBell,
 } from "react-icons/hi2";
 import { HiOutlineSearch } from "react-icons/hi";
-import { getInitials } from "../helpers/common";
 import Avatar from "./Avatar";
 
 const TopActions = ({ user = "Anubhav Raj" }) => {
@@ -21,7 +20,7 @@ const TopActions = ({ user = "Anubhav Raj" }) => {
       </SearchBox>
 
       <MoveMoney>
-        Move Money
+        <TextSpan>Move Money</TextSpan>
         <HiOutlineChevronDown size={16} />
       </MoveMoney>
 
@@ -120,6 +119,14 @@ const IconCircle = styled.button`
   &:hover {
     background: #f1f2f4;
   }
+`;
+
+const TextSpan = styled.div`
+overflow: hidden;
+  min-width: 0px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
 `;
 
 export default TopActions;
